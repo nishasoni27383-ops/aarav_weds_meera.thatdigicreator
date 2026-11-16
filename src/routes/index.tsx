@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { toast, Toaster } from "sonner";
 import { Clock, MapPin, ExternalLink } from "lucide-react";
@@ -13,6 +14,7 @@ import { WEDDING_CONFIG } from "@/config/wedding";
 import { Countdown } from "@/components/countdown";
 import { Reveal } from "@/components/reveal";
 import { ScratchCard } from "@/components/scratch-card";
+import { VideoDoorOpening } from "@/components/video-door-opening";
 import { FloatingPetals } from "@/components/floating-petals";
 import { RsvpSection } from "@/components/rsvp-section";
 import { RoyalTimelineScroll } from "@/components/royal-timeline-scroll";
@@ -255,6 +257,9 @@ function PersonCard({
 
 
 function Index() {
+  const [envelopeOpened, setEnvelopeOpened] = useState(false);
+  const [envelopeKey, setEnvelopeKey] = useState(0);
+
   const handleCopyLink = () => {
     navigator.clipboard.writeText(window.location.href);
     toast.success("Invitation link copied to clipboard! 💌");
@@ -269,12 +274,20 @@ function Index() {
     <>
       <Toaster position="top-center" richColors />
 
+      {/* ── 1. The Royal Palace Doors Video Entrance (Mobile/Tablet Portrait & Desktop Landscape) ── */}
+      <VideoDoorOpening
+        key={envelopeKey}
+        onOpenComplete={() => setEnvelopeOpened(true)}
+      />
+
       {/* ── Falling Rose Petals & Gold Sparkles ── */}
-      <FloatingPetals enabled={true} density={18} />
+      {envelopeOpened && <FloatingPetals enabled={true} density={18} />}
 
       {/* ── Global Website Background Layer (Fixed & Responsive by Device View) ── */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+        className={`pointer-events-none fixed inset-0 z-0 overflow-hidden transition-opacity duration-1000 ${
+          envelopeOpened ? "opacity-100" : "opacity-0"
+        }`}
         aria-hidden="true"
       >
         {/* Responsive Picture: Landscape on Laptop/Desktop, Portrait on Mobile/Tablet */}
@@ -295,7 +308,11 @@ function Index() {
       </div>
 
       {/* ── Main Wedding Invitation Content ── */}
-      <main className="relative z-10 overflow-x-clip">
+      <main
+        className={`relative z-10 overflow-x-clip transition-opacity duration-1000 ${
+          envelopeOpened ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+      >
         {/* ── 2. Cinematic Hero Invitation Section ────────────────────── */}
         <section id="hero" className="relative flex min-h-svh flex-col justify-between overflow-hidden px-4 sm:px-6 pt-16 pb-12 text-center">
           {/* Palace Doors Photograph Background Layer with Responsive Sizing */}
@@ -727,6 +744,23 @@ function Index() {
           </div>
         </footer>
       </main>
+
+      {/* Floating Replay Entrance Video Button */}
+      {envelopeOpened && (
+        <button
+          onClick={() => {
+            setEnvelopeOpened(false);
+            setEnvelopeKey((prev) => prev + 1);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+          className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 rounded-[10px] bg-[#B49A76] hover:bg-[#A38865] px-5 py-3 font-montserrat text-xs font-medium tracking-[0.16em] uppercase text-white shadow-[0_8px_24px_-4px_rgba(180,154,118,0.5)] border border-[#DED5C8]/40 backdrop-blur-md transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer"
+          title="Replay Royal Entrance Video"
+          aria-label="Replay Royal Entrance Video"
+        >
+          <span className="text-sm">🚪</span>
+          <span>Replay Entrance</span>
+        </button>
+      )}
     </>
   );
 }
