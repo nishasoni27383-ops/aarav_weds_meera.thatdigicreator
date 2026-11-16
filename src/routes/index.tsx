@@ -736,8 +736,33 @@ function Index() {
                 <p className="text-center sm:text-left font-normal">
                   Helpline &amp; Concierge: {WEDDING_CONFIG.invitationMessage.helplinePhone} · {WEDDING_CONFIG.invitationMessage.email}
                 </p>
-                <p className="text-center sm:text-right font-medium tracking-wide text-[#40372F] sm:ml-auto">
-                  made with love by nisha soni <span className="text-[#A62B32]">♥</span>
+                <p className="text-center sm:text-right font-medium tracking-wide text-[#40372F] sm:ml-auto flex items-center justify-center sm:justify-end gap-1.5">
+                  <span>made with love by</span>
+                  <a
+                    href="https://www.instagram.com/that_digi_creators/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[#40372F] hover:text-[#B49A76] transition-colors group cursor-pointer"
+                    title="Instagram: @that_digi_creators"
+                    aria-label="Instagram: @that_digi_creators"
+                  >
+                    <span className="underline decoration-[#DED5C8] group-hover:decoration-[#B49A76] underline-offset-4">nisha soni</span>
+                    <svg
+                      className="w-3.5 h-3.5 text-[#B49A76] transition-transform duration-200 group-hover:scale-115"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                    </svg>
+                  </a>
+                  <span className="text-[#A62B32]">♥</span>
                 </p>
               </div>
             </Reveal>
