@@ -5,9 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Wedding invitation design system — "Desert Clay".
- * Warm sandstone canvas, dusty rose & clay accents, muted gold ornament.
- * Headings: DM Serif Display. Body: Fira Sans.
+ * Luxury Digital Wedding Invitation Studio Design System
+ * Palette: Dusty Rose, Champagne Gold, Warm Ivory, Soft Blush Pink, Muted Burgundy, Antique Gold.
+ * Typography: Cormorant Garamond, Cinzel Decorative, Alex Brush, Pinyon Script, Marcellus, Montserrat.
  */
 
 @theme inline {
@@ -39,69 +39,101 @@
   --color-ring: var(--ring);
   --color-gold: var(--gold);
   --color-gold-deep: var(--gold-deep);
+  --color-gold-light: var(--gold-light);
+  --color-dusty-rose: var(--dusty-rose);
+  --color-blush: var(--blush);
+  --color-ivory: var(--ivory);
+  --color-burgundy: var(--burgundy);
   --color-clay: var(--clay);
   --color-sand: var(--sand);
   --color-rose: var(--rose);
   --color-ink: var(--ink);
-  --font-display: "DM Serif Display", "Georgia", serif;
-  --font-sans: "Fira Sans", "Segoe UI", sans-serif;
+  --font-display: "Cormorant Garamond", "Georgia", serif;
+  --font-serif: "Cormorant Garamond", "Georgia", serif;
+  --font-script: "Great Vibes", cursive;
+  --font-calligraphy: "Great Vibes", cursive;
+  --font-couple: "Great Vibes", cursive;
+  --font-royal: "Cinzel", "Georgia", serif;
+  --font-cinzel: "Cinzel", "Georgia", serif;
+  --font-marcellus: "Cinzel", "Georgia", serif;
+  --font-cormorant: "Cormorant Garamond", "Georgia", serif;
+  --font-sans: "Cormorant Garamond", "Georgia", serif;
 }
 
 :root {
-  --radius: 1rem;
-  --background: oklch(0.954 0.014 78.3);
-  --foreground: oklch(0.309 0.032 43.8);
-  --card: oklch(0.975 0.012 80);
-  --card-foreground: oklch(0.309 0.032 43.8);
-  --popover: oklch(0.975 0.012 80);
-  --popover-foreground: oklch(0.309 0.032 43.8);
-  --primary: oklch(0.656 0.088 26.9);
-  --primary-foreground: oklch(0.98 0.01 80);
-  --secondary: oklch(0.754 0.085 67.1);
-  --secondary-foreground: oklch(0.309 0.032 43.8);
-  --muted: oklch(0.91 0.035 74);
-  --muted-foreground: oklch(0.5 0.04 55);
-  --accent: oklch(0.702 0.079 64);
-  --accent-foreground: oklch(0.25 0.03 44);
+  --radius: 1.25rem;
+  /* Warm Ivory / Alabaster Background */
+  --background: oklch(0.978 0.012 85);
+  /* Deep Charcoal Burgundy Ink */
+  --foreground: oklch(0.24 0.035 25);
+  /* Pure warm cream card */
+  --card: oklch(0.992 0.006 85);
+  --card-foreground: oklch(0.24 0.035 25);
+  --popover: oklch(0.992 0.006 85);
+  --popover-foreground: oklch(0.24 0.035 25);
+  /* Dusty Rose */
+  --primary: oklch(0.62 0.095 20);
+  --primary-foreground: oklch(0.985 0.005 85);
+  /* Soft Blush Pink */
+  --secondary: oklch(0.935 0.025 35);
+  --secondary-foreground: oklch(0.32 0.04 25);
+  /* Warm Muted Taupe */
+  --muted: oklch(0.94 0.015 80);
+  --muted-foreground: oklch(0.50 0.025 45);
+  /* Champagne Gold */
+  --accent: oklch(0.82 0.08 85);
+  --accent-foreground: oklch(0.24 0.035 25);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0.01 80);
-  --border: oklch(0.856 0.055 70.6);
-  --input: oklch(0.856 0.055 70.6);
-  --ring: oklch(0.626 0.068 62.2);
-  --gold: oklch(0.852 0.055 70.6);
-  --gold-deep: oklch(0.72 0.07 70);
-  --clay: oklch(0.626 0.068 62.2);
-  --sand: oklch(0.754 0.085 67.1);
-  --rose: oklch(0.656 0.088 26.9);
-  --ink: oklch(0.309 0.032 43.8);
+  /* Champagne Gold Hairline Border */
+  --border: oklch(0.88 0.035 82);
+  --input: oklch(0.88 0.035 82);
+  --ring: oklch(0.75 0.08 80);
+  /* Metallic Palette */
+  --gold: oklch(0.84 0.085 85);
+  --gold-deep: oklch(0.68 0.095 76);
+  --gold-light: oklch(0.94 0.045 88);
+  --dusty-rose: oklch(0.66 0.085 20);
+  --blush: oklch(0.945 0.02 32);
+  --ivory: oklch(0.98 0.01 85);
+  --burgundy: oklch(0.35 0.095 18);
+  --clay: oklch(0.62 0.07 45);
+  --sand: oklch(0.82 0.05 75);
+  --rose: oklch(0.62 0.095 20);
+  --ink: oklch(0.24 0.035 25);
 }
 
 .dark {
-  --background: oklch(0.22 0.03 44);
-  --foreground: oklch(0.93 0.02 78);
-  --card: oklch(0.27 0.035 46);
-  --card-foreground: oklch(0.93 0.02 78);
-  --popover: oklch(0.27 0.035 46);
-  --popover-foreground: oklch(0.93 0.02 78);
-  --primary: oklch(0.754 0.085 67.1);
-  --primary-foreground: oklch(0.22 0.03 44);
-  --secondary: oklch(0.35 0.04 48);
-  --secondary-foreground: oklch(0.93 0.02 78);
-  --muted: oklch(0.32 0.035 46);
-  --muted-foreground: oklch(0.72 0.04 62);
-  --accent: oklch(0.45 0.06 55);
-  --accent-foreground: oklch(0.95 0.02 78);
+  --background: oklch(0.18 0.025 25);
+  --foreground: oklch(0.96 0.015 85);
+  --card: oklch(0.23 0.03 26);
+  --card-foreground: oklch(0.96 0.015 85);
+  --popover: oklch(0.23 0.03 26);
+  --popover-foreground: oklch(0.96 0.015 85);
+  --primary: oklch(0.72 0.085 25);
+  --primary-foreground: oklch(0.18 0.025 25);
+  --secondary: oklch(0.30 0.035 28);
+  --secondary-foreground: oklch(0.96 0.015 85);
+  --muted: oklch(0.28 0.025 26);
+  --muted-foreground: oklch(0.75 0.025 60);
+  --accent: oklch(0.55 0.07 80);
+  --accent-foreground: oklch(0.96 0.015 85);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.98 0.01 80);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 16%);
-  --ring: oklch(0.626 0.068 62.2);
-  --gold: oklch(0.80 0.06 70);
-  --gold-deep: oklch(0.72 0.07 70);
-  --clay: oklch(0.626 0.068 62.2);
-  --sand: oklch(0.754 0.085 67.1);
-  --rose: oklch(0.70 0.09 27);
-  --ink: oklch(0.93 0.02 78);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.75 0.08 80);
+  --gold: oklch(0.82 0.08 85);
+  --gold-deep: oklch(0.70 0.09 76);
+  --gold-light: oklch(0.90 0.05 88);
+  --dusty-rose: oklch(0.72 0.085 25);
+  --blush: oklch(0.32 0.03 30);
+  --ivory: oklch(0.96 0.015 85);
+  --burgundy: oklch(0.40 0.09 18);
+  --clay: oklch(0.62 0.07 45);
+  --sand: oklch(0.75 0.06 70);
+  --rose: oklch(0.72 0.085 25);
+  --ink: oklch(0.96 0.015 85);
 }
 
 @layer base {
@@ -116,16 +148,116 @@
   body {
     background-color: var(--color-background);
     background-image:
-      radial-gradient(1100px 620px at 50% -10%, oklch(0.93 0.04 75 / 0.65), transparent),
-      radial-gradient(900px 540px at 105% 105%, oklch(0.9 0.05 68 / 0.55), transparent);
+      radial-gradient(1300px 750px at 50% -5%, oklch(0.945 0.02 32 / 0.55), transparent),
+      radial-gradient(1000px 650px at 102% 102%, oklch(0.94 0.045 88 / 0.45), transparent),
+      radial-gradient(900px 500px at -5% 45%, oklch(0.66 0.085 20 / 0.06), transparent);
     color: var(--color-foreground);
-    font-family: var(--font-sans);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
   }
 
-  ::selection {
-    background-color: oklch(0.754 0.085 67.1 / 0.4);
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
   }
+
+  p {
+    line-height: 1.75;
+  }
+
+  ::selection {
+    background-color: oklch(0.84 0.085 85 / 0.35);
+  }
+}
+
+/* Premium Luxury Editorial Wedding Typography */
+.font-couple,
+.font-script {
+  font-family: "Great Vibes", cursive !important;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+}
+
+.font-script-bold {
+  font-family: "Great Vibes", cursive !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  -webkit-text-stroke: 0.4px currentColor;
+}
+
+/* Luxurious Golden Beige Action Bar */
+.golden-beige-bar {
+  background: linear-gradient(
+    135deg,
+    #fcf6ea 0%,
+    #f6e8cd 28%,
+    #eed8ae 52%,
+    #f9efe1 78%,
+    #f3e2be 100%
+  );
+  border: 1.5px solid #d4af37;
+  box-shadow:
+    0 10px 28px -6px rgba(184, 134, 11, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(180, 130, 40, 0.25);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.golden-beige-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.65),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+
+.golden-beige-bar:hover::before {
+  left: 150%;
+}
+
+.golden-beige-bar:hover {
+  transform: translateY(-2px);
+  border-color: #b8860b;
+  box-shadow:
+    0 16px 36px -8px rgba(184, 134, 11, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.98);
+}
+
+.font-heading {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
+.font-body {
+  font-family: "Cormorant Garamond", Georgia, serif !important;
+  font-weight: 400 !important;
+  line-height: 1.8;
+}
+
+.font-label {
+  font-family: "Cinzel", Georgia, serif !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.2em !important;
 }
 
 @layer components {
@@ -147,7 +279,13 @@
   /* Load-time entrance */
   .anim-rise {
     opacity: 0;
-    animation: rise 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: rise 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  /* Majestic Slow Text Reveal with unblur */
+  .anim-slow-rise {
+    opacity: 0;
+    animation: slow-rise 2.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
   /* Shimmering gold text */
@@ -166,9 +304,137 @@
     animation: shimmer 7s linear infinite;
   }
 
+  /* Radiant Royal Metallic Gold for Timeline Event Names */
+  .gold-timeline-title {
+    background: linear-gradient(
+      135deg,
+      #7A4B0A 0%,
+      #B8860B 25%,
+      #D4AF37 45%,
+      #FFF1BF 55%,
+      #D4AF37 68%,
+      #8C5814 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #9E6B15;
+    filter: drop-shadow(0 1px 1px rgba(160, 100, 20, 0.25));
+    transition: filter 0.3s ease;
+  }
+
+  .gold-timeline-title:hover {
+    filter: drop-shadow(0 2px 5px rgba(212, 175, 55, 0.5));
+  }
+
+  .dark .gold-timeline-title {
+    background: linear-gradient(
+      135deg,
+      #ECC876 0%,
+      #FFE8A3 35%,
+      #FFFDF2 50%,
+      #FFD97D 65%,
+      #D4AF37 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ECC876;
+    filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.6));
+  }
+
+  /* Glowing White Text for Tap to Open */
+  .glowing-white-text {
+    color: #ffffff !important;
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.95),
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 35px rgba(255, 255, 255, 0.5);
+  }
+
+  /* Radiant Luminous Gold on Dark Backgrounds (Intro & Hero) */
+  .gold-title-dark {
+    background: linear-gradient(
+      135deg,
+      #F5DE98 0%,
+      #FFE8A3 30%,
+      #FFF7D6 50%,
+      #E5B84B 70%,
+      #D4AF37 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #FFE8A3;
+    filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 18px rgba(212, 175, 55, 0.35));
+  }
+
+  /* Luxury typography helpers */
+  .font-montserrat {
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  }
+
+  .font-cormorant {
+    font-family: "Cormorant Garamond", Georgia, serif !important;
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+
+  .font-calligraphy {
+    font-family: var(--font-calligraphy);
+  }
+
+  .font-royal {
+    font-family: var(--font-royal);
+  }
+
+  .font-marcellus {
+    font-family: var(--font-marcellus);
+  }
+
+  .font-cormorant {
+    font-family: var(--font-display);
+  }
+
+  /* Luxury Stationery Card */
+  .luxury-card {
+    background: var(--color-card);
+    border: 1px solid oklch(0.84 0.085 85 / 0.5);
+    box-shadow:
+      0 20px 45px -20px oklch(0.35 0.095 18 / 0.09),
+      0 4px 16px -4px oklch(0.84 0.085 85 / 0.18);
+  }
+
+  .gold-border-ornate {
+    border: 1px solid oklch(0.84 0.085 85 / 0.6);
+    outline: 1px solid oklch(0.84 0.085 85 / 0.25);
+    outline-offset: 4px;
+  }
+
+  /* Luxury Foil Button */
+  .luxury-foil-btn {
+    background: linear-gradient(135deg, #e8c872 0%, #d4af37 50%, #b8860b 100%);
+    color: #2b1718;
+    box-shadow: 0 10px 25px -6px rgba(184, 134, 11, 0.45);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .luxury-foil-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -4px rgba(184, 134, 11, 0.6);
+  }
+
+  .luxury-foil-btn:active {
+    transform: translateY(1px);
+  }
+
   /* Mughal-arch photo frame */
   .frame-arch {
-    border-radius: 999px 999px 20px 20px;
+    border-radius: 999px 999px 24px 24px;
   }
 
   .float-slow {
@@ -196,6 +462,23 @@
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes slow-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+    filter: blur(6px);
+  }
+  60% {
+    opacity: 0.85;
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 }
 
@@ -242,6 +525,7 @@
     transform: translateY(4px) translateX(-4px);
   }
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   .anim-rise,
